@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Rosmontic/world-entropy-cards/schema.json",
+  "title": "世界熵卡牌数据库",
+  "type": "object",
+  "required": ["schemaVersion", "set", "cards"],
+  "properties": {
+    "schemaVersion": { "type": "string" },
+    "set": { "type": "object" },
+    "cards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "series", "level", "stats", "keywords", "text", "art"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[A-Z]+[0-9]+$" },
+          "name": { "type": "string" },
+          "series": { "type": "string" },
+          "level": { "enum": ["纯净", "萌芽", "灾祸", "崩坏", "终末", "隐秘"] },
+          "stats": {
+            "type": "object",
+            "required": ["chaos", "barren", "disqualification", "calamity"],
+            "properties": {
+              "chaos": { "type": ["integer", "string"], "minimum": 0, "maximum": 6 },
+              "barren": { "type": ["integer", "string"], "minimum": 0, "maximum": 6 },
+              "disqualification": { "type": ["integer", "string"], "minimum": 0, "maximum": 6 },
+              "calamity": { "type": ["integer", "string"], "minimum": 0, "maximum": 6 }
+            }
+          },
+          "keywords": { "type": "array", "items": { "type": "string" } },
+          "trigger": { "type": ["string", "null"] },
+          "effect": { "type": ["string", "null"] },
+          "text": { "type": "string" },
+          "flavor": { "type": "string" },
+          "art": { "type": "string", "pattern": "^[a-z0-9-]+\\.svg$" }
+        }
+      }
+    }
+  }
+}
