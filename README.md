@@ -4,7 +4,7 @@
 
 ## 文件
 
-- `cards.json`：当前 DEMO 的 12 张卡牌。
+- `cards.json`：当前 DEMO 的 13 张卡牌；O1000 仅作为系统备用主世界生成，不进入固定卡组。
 - `schema.json`：卡牌数据结构与四维字段约束。
 - `keywords.json`：词条及程序结算口径。
 - `CHANGELOG.md`：数值和文字版本记录。
