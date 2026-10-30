@@ -13,7 +13,7 @@
         "type": "object",
         "required": ["id", "name", "series", "level", "stats", "keywords", "text", "art"],
         "properties": {
-          "id": { "type": "string", "pattern": "^[A-Z]+[0-9]+$" },
+          "id": { "type": "string", "pattern": "^[A-Z]+[0-9]+(?:\\.[0-9]+)?$" },
           "name": { "type": "string" },
           "series": { "type": "string" },
           "level": { "enum": ["纯净", "萌芽", "灾祸", "崩坏", "终末", "隐秘"] },
